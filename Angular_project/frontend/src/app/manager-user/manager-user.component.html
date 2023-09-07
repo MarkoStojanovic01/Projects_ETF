@@ -1,0 +1,86 @@
+<body>
+    <h3>
+        Manager
+        <br/>
+        <br/>
+        <h4 class="h4">User</h4>
+    </h3>
+    <br/>
+    <h4>
+    <a routerLink="../..">Users</a> | 
+    <a routerLink="../../doctor">Add doctor</a>
+    </h4>
+    <hr/>
+    <router-outlet></router-outlet>
+    
+    <table class="profile">
+        <tr>
+            <td>Firstname:</td>
+            <td>
+                {{user.firstname}}
+            </td>
+            <td rowspan="8" class="profile-picture" *ngIf="user.type == 'doctor'">
+                <img src="{{user.image}}" alt="Profile Picture">
+            </td>
+            <td rowspan="5" class="profile-picture" *ngIf="user.type == 'patient'">
+                <img src="{{user.image}}" alt="Profile Picture">
+            </td>
+        </tr>
+        <tr>
+            <td>Lastname:</td>
+            <td>
+                {{user.lastname}} 
+            </td>
+        </tr>
+        <tr>
+            <td>Adress:</td>
+            <td>
+                {{user.adress}} 
+            </td>
+        </tr>
+        <tr>
+            <td>Mail adress:</td>
+            <td>
+                {{user.mail}} 
+            </td>
+        </tr>
+        <tr>
+            <td>Phone number:</td>
+            <td>
+                {{user.phone}} 
+            </td>
+        </tr>
+        <tr *ngIf="user.type == 'doctor'">
+            <td>Specialization:</td>
+            <td>
+                {{user.specialization}} 
+            </td>
+        </tr>
+        <tr *ngIf="user.type == 'doctor'">
+            <td>Branch:</td>
+            <td>
+                {{user.branch}} 
+            </td>
+        </tr>
+        <tr *ngIf="user.type == 'doctor'">
+            <td>Licence number:</td>
+            <td>
+                {{user.licenceNumber}} 
+            </td>
+        </tr>
+    </table>
+    <div class="logout-button">
+        <button (click)="logout()">Logout</button>
+    </div>
+
+    <br/>
+    
+    <div class="delete-button">
+        <button (click)="deleteUser()">Delete User</button>
+    </div>
+    <br/>
+    <div class="delete-button">
+        <button (click)="updateUser()">Update User</button>
+    </div>
+
+</body>

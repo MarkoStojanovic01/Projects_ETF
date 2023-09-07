@@ -1,0 +1,88 @@
+<body>
+    <h3>Examinations</h3>
+    <br/>
+    <h4>
+    <a routerLink="..">Profile</a> | 
+    <a routerLink="../doctors">Doctors</a> |
+    <a routerLink=".">Examinations</a>
+    </h4>
+    <hr/>
+    <router-outlet></router-outlet>
+
+    <div class="logout-button">
+        <button (click)="logout()">Logout</button>
+    </div>
+
+    <table class="all-table">
+        <tr>
+          <th>
+            Examination
+          </th>
+          <th>
+            Date
+          </th>
+          <th>
+            Branch
+          </th>
+          <th>
+            Doctors firstname
+          </th>
+          <th>
+            Doctors lastname
+          </th>
+          <th>
+            Remove Appointment
+          </th>
+        </tr>
+        <tr *ngFor="let a of appointments">
+            <td>{{a.examination}}</td>
+            <td>{{ a.date | date:'yyyy-MM-dd HH:mm' }}</td>
+            <td>{{a.branch}}</td>
+            <td>{{a.doc_firstname}}</td>
+            <td>{{a.doc_lastname}}</td>
+            <td class="remove-button"><button (click)="removeAppointment(a.doc_username,a.date)" *ngIf="a!=null">Yes</button></td>
+        </tr>
+      </table>
+
+      <br/>
+      <br/>
+
+      <h3>Reports</h3>
+
+      <table class="all-table">
+        <tr>
+          <th>
+            Date
+          </th>
+          <th>
+            Doctor
+          </th>
+          <th>
+            Specialization
+          </th>
+          <th>
+            Appointment reason
+          </th>
+          <th>
+            Diagnosis
+          </th>
+          <th>
+            Therapy
+          </th>
+          <th>
+            Next appointment
+          </th>
+        </tr>
+        <tr *ngFor="let r of reports">
+            <td>{{ r.date | date:'yyyy-MM-dd HH:mm' }}</td>
+            <td>{{r.doc_firstname}} {{r.doc_lastname}}</td>
+            <td>{{r.specialization}}</td>
+            <td>{{r.reason}}</td>
+            <td>{{r.diagnosis}}</td>
+            <td>{{r.therapy}}</td>
+            <td>{{r.nextDate | date:'yyyy-MM-dd'}}</td>
+        </tr>
+      </table>
+
+
+</body>

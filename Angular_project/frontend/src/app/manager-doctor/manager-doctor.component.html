@@ -1,0 +1,129 @@
+<body>
+    <h3 class="h3">
+        Manager
+        <br/>
+        <br/>
+        <h4 class="h4">Add doctor</h4>
+    </h3>
+    <br/>
+    <h4>
+    <a routerLink="..">Users</a> | 
+    <a routerLink=".">Add doctor</a>
+    </h4>
+    <hr/>
+    <router-outlet></router-outlet>
+
+    <div class="logout-button">
+        <button (click)="logout()">Logout</button>
+    </div>
+
+    <form (ngSubmit)="addDoctor()" class="addDoc-form">
+        <table >
+          <tr>
+            <td>
+              <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" [(ngModel)]="username" required>
+                <div class="error" *ngIf="!isUsernameValid">Empty</div>
+                <div class="error" *ngIf="sameUsername">This username already exists</div>
+              </div>
+            </td>
+            <td>
+              <div class="input-group">
+                <label for="password1">Password:</label>
+                <input type="password" id="password1" name="password1" [(ngModel)]="password1" required>
+                <div class="error" *ngIf="!isPass1Valid">Empty</div>
+                <div class="error" *ngIf="!passForm">Incorrect password</div>
+              </div>
+            </td>
+            <td>
+              <div class="input-group">
+                <label for="password2">Repeat Password:</label>
+                <input type="password" id="password2" name="password2" [(ngModel)]="password2" required>
+                <div class="error" *ngIf="!isPass2Valid">Empty</div>
+                <div class="error" *ngIf="!samePass">Enter the same password</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="input-group">
+                <label for="firstname">Firstname:</label>
+                <input type="text" id="firstname" name="firstname" [(ngModel)]="firstname" required>
+                <div class="error" *ngIf="!isFirstnameValid">Empty</div>
+              </div>
+            </td>
+            <td>
+              <div class="input-group">
+                <label for="lastname">Lastname:</label>
+                <input type="text" id="lastname" name="lastname" [(ngModel)]="lastname" required>
+                <div class="error" *ngIf="!isLastnameValid">Empty</div>
+              </div>
+            </td>
+            <td>
+              <div class="input-group">
+                <label for="adress">Adress:</label>
+                <input type="text" id="adress" name="adress" [(ngModel)]="adress" required>
+                <div class="error" *ngIf="!isAdressValid">Empty</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="input-group">
+                <label for="branch">Branch:</label>
+                <input type="text" id="branch" name="branch" [(ngModel)]="branch" required>
+                <div class="error" *ngIf="!isBranchValid">Empty</div>
+              </div>
+            </td>
+            <td>
+              <div class="input-group">
+                <label for="mail">Mail:</label>
+                <input type="text" id="mail" name="mail" [(ngModel)]="mail" required>
+                <div class="error" *ngIf="!isMailValid">Empty</div>
+                <div class="error" *ngIf="usedMail">Already used mail adress</div>
+              </div>
+            </td>
+            <td>
+              <div class="input-group">
+                <label for="phone">Phone number:</label>
+                <input type="text" id="phone" name="phone" [(ngModel)]="phone" required>
+                <div class="error" *ngIf="!isPhoneValid">Empty</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="input-group">
+                <label for="licence">Licence number:</label>
+                <input type="number" id="licence" name="licence" [(ngModel)]="licence" required min="1" (keypress)="validateIntegerInput($event)" #licenceInput="ngModel">
+                <div class="error" *ngIf="licenceInput.invalid && (licenceInput.dirty || licenceInput.touched)">
+                  Enter a valid licence number (greater than zero).
+                </div>
+                <div class="error" *ngIf="!isLicenceValid">Empty</div>
+              </div>
+            </td>
+            <td>
+              <div class="input-group">
+                <label for="specialization">Choose Specialization:</label>
+                <select id="specialization" name="specialization" [(ngModel)]="specialization" required>
+                  <option value="" disabled>Select a specialization</option>
+                  <option *ngFor="let s of specializations" [value]="s.specialization">{{ s.specialization }}</option>
+                </select>
+                <div class="error" *ngIf="!isSpecializationValid">Please select a specialization.</div>
+              </div>
+            </td>
+            <td>
+                <button type="submit" class="submit">Add doctor</button>
+            </td>
+          </tr>
+        </table>
+
+        <div>
+        Add profile image:  <input type="file" id="image" name="image" (change)="onFileSelected($event)" accept=".jpg, .jpeg, .png">
+        </div>
+        <div class="error" *ngIf="wrongSize">Image doesn't have right dimensions!</div>
+        
+      </form>
+
+</body>

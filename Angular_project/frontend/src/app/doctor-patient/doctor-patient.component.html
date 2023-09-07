@@ -1,0 +1,125 @@
+<body>
+    <h3>Patient</h3>
+    <br/>
+    <h4>
+    <a routerLink="../..">Profile</a> | 
+    <a routerLink="../../examinations">Examinations</a> |
+    <a routerLink="../../other">Other</a>
+    </h4>
+    <hr/>
+    <router-outlet></router-outlet>
+
+    <table class="profile">
+        <tr>
+            <td>Firstname:</td>
+            <td>
+                {{patient.firstname}}
+            </td>
+            <td rowspan="5" class="profile-picture">
+                <img src="{{patient.image}}" alt="Profile Picture">
+              </td>
+        </tr>
+        <tr>
+            <td>Lastname:</td>
+            <td>
+                {{patient.lastname}} 
+            </td>
+        </tr>
+        <tr>
+            <td>Adress:</td>
+            <td>
+                {{patient.adress}} 
+            </td>
+        </tr>
+        <tr>
+            <td>Mail adress:</td>
+            <td>
+                {{patient.mail}} 
+            </td>
+        </tr>
+        <tr>
+            <td>Phone number:</td>
+            <td>
+                {{patient.phone}} 
+            </td>
+        </tr>
+    </table>
+
+    <div class="logout-button">
+        <button (click)="logout()">Logout</button>
+    </div>
+
+    <br/>
+    <br/>
+
+    <h3>Reports</h3>
+
+      <table class="all-table">
+        <tr>
+          <th>
+            Date
+          </th>
+          <th>
+            Appointment reason
+          </th>
+          <th>
+            Diagnosis
+          </th>
+          <th>
+            Therapy
+          </th>
+          <th>
+            Next appointment
+          </th>
+        </tr>
+        <tr *ngFor="let r of reports">
+            <td>{{ r.date | date:'yyyy-MM-dd HH:mm' }}</td>
+            <td>{{r.reason}}</td>
+            <td>{{r.diagnosis}}</td>
+            <td>{{r.therapy}}</td>
+            <td>{{r.nextDate | date:'yyyy-MM-dd'}}</td>
+        </tr>
+      </table>
+
+      <br/>
+      <br/>
+
+      <form (ngSubmit)="makeReport()" class="report-form">
+        
+        <div class="input-group">
+          <label for="examination">Choose Examination:</label>
+          <select id="examination" name="examination" [(ngModel)]="appointmentDate" required>
+            <option value="" disabled>Select an examination</option>
+            <option *ngFor="let a of appointments" [value]="a.date">{{ a.examination }} {{a.date | date:'yyyy-MM-dd HH:mm'}}</option>
+          </select>
+          <div class="error" *ngIf="!isExaminationValid">Please select an examination.</div>
+        </div>
+        
+        <div class="input-group">
+          <label for="diagnosis">Diagnosis:</label>
+          <input type="text" id="diagnosis" name="diagnosis" [(ngModel)]="diagnosis" required>
+          <div class="error" *ngIf="!isDiagnosisValid">Write a diagnosis</div>
+        </div>
+        
+        <div class="input-group">
+          <label for="reason">Reason:</label>
+          <input type="text" id="reason" name="reason" [(ngModel)]="reason" required>
+          <div class="error" *ngIf="!isReasonValid">Write a reason</div>
+        </div>
+
+        <div class="input-group">
+          <label for="therapy">Therapy:</label>
+          <input type="text" id="therapy" name="therapy" [(ngModel)]="therapy" required>
+          <div class="error" *ngIf="!isTherapyValid">Write a therapy</div>
+        </div>
+
+        <div class="input-group">
+          <label for="date">New Date:</label>
+          <input type="text" id="date" name="date" [(ngModel)]="newAppointmentDate" required>
+          <div class="error" *ngIf="!isDateValid">Date must be in the format mm.dd.yyyy.</div>
+        </div>
+      
+        <button type="submit" class="submit">Make report</button>
+      </form>
+
+</body>

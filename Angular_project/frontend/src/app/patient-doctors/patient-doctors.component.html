@@ -1,0 +1,62 @@
+<body>
+    <h3>Doctors</h3>
+    <br/>
+    <h4>
+    <a routerLink="..">Profile</a> | 
+    <a routerLink=".">Doctors</a> |
+    <a routerLink="../examinations">Examinations</a>
+    </h4>
+    <hr/>
+    <router-outlet></router-outlet>
+    
+    <table class="doctors-table">
+      <tr>
+        <th>
+          Picture
+        </th>
+        <th>
+          Firstname
+          <button (click)="sortBy('firstname')">Sort A-Z</button>
+          <button (click)="reverseSortBy('firstname')">Sort Z-A</button>
+          <input [(ngModel)]="searchText.firstname" 
+                 (ngModelChange)="applyFilters()" 
+                 placeholder="Search...">
+        </th>
+        <th>
+          Lastname
+          <button (click)="sortBy('lastname')">Sort A-Z</button>
+          <button (click)="reverseSortBy('lastname')">Sort Z-A</button>
+          <input [(ngModel)]="searchText.lastname" 
+                 (ngModelChange)="applyFilters()" 
+                 placeholder="Search...">
+        </th>
+        <th>
+          Specialization
+          <button (click)="sortBy('specialization')">Sort A-Z</button>
+          <button (click)="reverseSortBy('specialization')">Sort Z-A</button>
+          <input [(ngModel)]="searchText.specialization" 
+                 (ngModelChange)="applyFilters()" 
+                 placeholder="Search...">
+        </th>
+        <th>
+            Branch
+            <button (click)="sortBy('branch')">Sort A-Z</button>
+            <button (click)="reverseSortBy('branch')">Sort Z-A</button>
+            <input [(ngModel)]="searchText.branch" 
+                   (ngModelChange)="applyFilters()" 
+                   placeholder="Search...">
+          </th>
+      </tr>
+      <tr *ngFor="let doc of shownDoctors">
+          <td class="profile-picture"><img src="{{doc.image}}" alt="Profile Picture"></td>
+          <td><a [routerLink]="['../doc', doc.username]">{{doc.firstname}}</a></td>
+          <td>{{doc.lastname}}</td>
+          <td>{{doc.specialization}}</td>
+          <td>{{doc.branch}}</td>
+      </tr>
+    </table>
+    
+    <div class="logout-button">
+        <button (click)="logout()">Logout</button>
+    </div>
+    </body>

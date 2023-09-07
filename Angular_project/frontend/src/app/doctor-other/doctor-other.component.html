@@ -1,0 +1,43 @@
+<body>
+    <h3>Other</h3>
+    <br/>
+    <h4>
+    <a routerLink="..">Profile</a> | 
+    <a routerLink="../examinations">Examinations</a> |
+    <a routerLink=".">Other</a>
+    </h4>
+    <hr/>
+    <router-outlet></router-outlet>
+
+    <div class="logout-button">
+        <button (click)="logout()">Logout</button>
+    </div>
+
+    <form (ngSubmit)="requestExamination()" class="request-form">
+        
+        <div class="input-group">
+          <label for="examination">Examination:</label>
+          <input type="text" id="examination" name="examination" [(ngModel)]="examination" required>
+          <div class="error" *ngIf="!isExaminationValid">Enter an examination</div>
+        </div>
+        
+        <div class="input-group">
+            <label for="duration">Duration:</label>
+            <input type="number" id="duration" name="duration" [(ngModel)]="duration" 
+            required min="1" (keypress)="validateIntegerInput($event)" #durationInput="ngModel">
+            <div class="error" *ngIf="durationInput.invalid && (durationInput.dirty || durationInput.touched)">
+              Enter a valid duration (greater than zero).
+            </div>
+            <div class="error" *ngIf="!isDurationValid">Enter a duration</div>
+          </div>
+
+        <div class="input-group">
+          <label for="price">Price:</label>
+          <input type="text" id="price" name="price" [(ngModel)]="price" required>
+          <div class="error" *ngIf="!isPriceValid">Enter a price</div>
+        </div>
+      
+        <button type="submit" class="submit">Request an examination</button>
+      </form>
+
+</body>

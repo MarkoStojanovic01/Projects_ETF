@@ -1,0 +1,113 @@
+body {
+    background-color: rgb(224, 235, 239);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    /* justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    min-height: 100vh; /* Ensure content takes at least the full viewport height */
+  }
+
+.logout-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0px;
+  }
+  
+  .logout-button button {
+    font-size: 25px;
+    padding: 8px 15px;
+    background-color: lightcyan;
+    color: darkblue;
+    border: 2px solid darkblue; /* Add a 2px solid dark blue border */
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .profile {
+    margin: 0 auto;
+    color: darkblue;
+    border-collapse: collapse;
+    width: 50%; /* Adjust the width as needed */
+  }
+  
+  .profile td {
+    padding: 8px;
+    border: 1px solid darkblue;
+  }
+  
+  .profile-picture {
+    vertical-align: center; /* Align the picture to the top of the cell */
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .profile-picture img {
+    max-width: 300px; /* Adjust the maximum width of the profile picture */
+    max-height: 300px; /* Adjust the maximum height of the profile picture */
+    /* border: 2px solid blue; /* Add a border to the picture */
+  }
+
+  .all-table {
+    width: 100%; /* Make the table width 100% of its container */
+    border-collapse: collapse; /* Collapse the border spacing between cells */
+  }
+  
+  .all-table th,
+  .all-table td {
+    padding: 10px; /* Add padding to cells for spacing */
+    text-align: center; /* Center-align text in cells */
+    color: darkblue; /* Set the text color in header cells to dark blue */
+    font-size: 22px; /* Adjust the font size as needed */
+  }
+  
+  .all-table th {
+    background-color: lightblue; /* Add a light blue background to header cells */
+    
+  }
+
+  .report-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: darkblue;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 10px;
+    color: darkblue;
+  }
+  
+  .label {
+    color: darkblue;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input, .input-group select {
+    background-color: rgb(224, 235, 239);
+    color: darkblue;
+    border: 1px solid darkblue;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  .submit {
+    font-size: 25px;
+    padding: 8px 15px;
+    background-color: lightcyan;
+    color: darkblue;
+    border: 2px solid darkblue; /* Add a 2px solid dark blue border */
+    border-radius: 4px;
+    cursor: pointer;
+  }
