@@ -1,0 +1,69 @@
+<body>
+    <h3 class="h3">
+        Manager
+        <br/>
+        <br/>
+        <h4 class="h4">Users</h4>
+    </h3>
+    <br/>
+    <h4>
+    <a routerLink=".">Users</a> | 
+    <a routerLink="doctor">Add doctor</a> |
+    <a routerLink="registrations">Registrations</a> |
+    <a routerLink="examinations">Examinations</a>
+    </h4>
+    <hr/>
+    <router-outlet></router-outlet>
+
+    <table class="users-table">
+        <tr>
+          <th>
+            Picture
+          </th>
+          <th>
+            Firstname
+            <button (click)="sortBy('firstname')">Sort A-Z</button>
+            <button (click)="reverseSortBy('firstname')">Sort Z-A</button>
+            <input [(ngModel)]="searchText.firstname" 
+                   (ngModelChange)="applyFilters()" 
+                   placeholder="Search...">
+          </th>
+          <th>
+            Lastname
+            <button (click)="sortBy('lastname')">Sort A-Z</button>
+            <button (click)="reverseSortBy('lastname')">Sort Z-A</button>
+            <input [(ngModel)]="searchText.lastname" 
+                   (ngModelChange)="applyFilters()" 
+                   placeholder="Search...">
+          </th>
+          <th>
+            Username
+            <button (click)="sortBy('username')">Sort A-Z</button>
+            <button (click)="reverseSortBy('username')">Sort Z-A</button>
+            <input [(ngModel)]="searchText.username" 
+                   (ngModelChange)="applyFilters()" 
+                   placeholder="Search...">
+          </th>
+          <th>
+            Type
+            <button (click)="sortBy('type')">Doc first</button>
+            <button (click)="reverseSortBy('type')">Patients first</button>
+            <input [(ngModel)]="searchText.type" 
+                   (ngModelChange)="applyFilters()" 
+                   placeholder="Search...">
+          </th>
+        </tr>
+        <tr *ngFor="let u of shownUsers">
+            <td class="profile-picture"><img src="{{u.image}}" alt="Profile Picture"></td>
+            <td>{{u.firstname}}</td>
+            <td>{{u.lastname}}</td>
+            <td><a [routerLink]="['./user', u.username]">{{u.username}}</a></td>
+            <td>{{u.type}}</td>
+        </tr>
+      </table>
+      
+      
+      <div class="logout-button">
+        <button (click)="logout()">Logout</button>
+    </div>
+</body>

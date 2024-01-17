@@ -1,0 +1,94 @@
+<body>
+    <h3>Register</h3>
+    <br/>
+    <h4>
+    <a routerLink="..">Hospital</a> | 
+    <a routerLink="../login">Login</a> |
+    <a routerLink=".">Register</a>
+    </h4>
+    <hr/>
+    <router-outlet></router-outlet>
+
+    <form (ngSubmit)="addPatient()" class="addDoc-form">
+        <table >
+          <tr>
+            <td>
+              <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" [(ngModel)]="username" required>
+                <div class="error" *ngIf="!isUsernameValid">Empty</div>
+                <div class="error" *ngIf="sameUsername">This username already exists</div>
+                <div class="error" *ngIf="rejectedUsername">This username is rejected</div>
+              </div>
+            </td>
+            <td>
+              <div class="input-group">
+                <label for="password1">Password:</label>
+                <input type="password" id="password1" name="password1" [(ngModel)]="password1" required>
+                <div class="error" *ngIf="!isPass1Valid">Empty</div>
+                <div class="error" *ngIf="!passForm">Incorrect password</div>
+              </div>
+            </td>
+            <td>
+              <div class="input-group">
+                <label for="password2">Repeat Password:</label>
+                <input type="password" id="password2" name="password2" [(ngModel)]="password2" required>
+                <div class="error" *ngIf="!isPass2Valid">Empty</div>
+                <div class="error" *ngIf="!samePass">Enter the same password</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="input-group">
+                <label for="firstname">Firstname:</label>
+                <input type="text" id="firstname" name="firstname" [(ngModel)]="firstname" required>
+                <div class="error" *ngIf="!isFirstnameValid">Empty</div>
+              </div>
+            </td>
+            <td>
+              <div class="input-group">
+                <label for="lastname">Lastname:</label>
+                <input type="text" id="lastname" name="lastname" [(ngModel)]="lastname" required>
+                <div class="error" *ngIf="!isLastnameValid">Empty</div>
+              </div>
+            </td>
+            <td>
+              <div class="input-group">
+                <label for="adress">Adress:</label>
+                <input type="text" id="adress" name="adress" [(ngModel)]="adress" required>
+                <div class="error" *ngIf="!isAdressValid">Empty</div>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="input-group">
+                <label for="mail">Mail:</label>
+                <input type="text" id="mail" name="mail" [(ngModel)]="mail" required>
+                <div class="error" *ngIf="!isMailValid">Empty</div>
+                <div class="error" *ngIf="usedMail">Already used mail adress</div>
+                <div class="error" *ngIf="rejectedMail">This mail adress is rejected</div>
+              </div>
+            </td>
+            <td>
+              <div class="input-group">
+                <label for="phone">Phone number:</label>
+                <input type="text" id="phone" name="phone" [(ngModel)]="phone" required>
+                <div class="error" *ngIf="!isPhoneValid">Empty</div>
+              </div>
+            </td>
+            <td>
+                <button type="submit" class="submit">Register</button>
+            </td>
+          </tr>
+        </table>
+
+        <div>
+        Add profile image:  <input type="file" id="image" name="image" (change)="onFileSelected($event)" accept=".jpg, .jpeg, .png">
+        </div>
+        <div class="error" *ngIf="wrongSize">Image doesn't have right dimensions!</div>
+        
+      </form>
+
+</body>

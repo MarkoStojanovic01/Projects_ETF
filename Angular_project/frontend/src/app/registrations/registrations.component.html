@@ -1,0 +1,82 @@
+<body>
+    <h3 class="h3">
+        Manager
+        <br/>
+        <br/>
+        <h4 class="h4">Registrations</h4>
+    </h3>
+    <br/>
+    <h4>
+    <a routerLink="..">Users</a> | 
+    <a routerLink="../doctor">Add doctor</a> |
+    <a routerLink=".">Registrations</a> |
+    <a routerLink="../examinations">Examinations</a>
+    </h4>
+    <hr/>
+    <router-outlet></router-outlet>
+
+    <table class="users-table">
+        <tr>
+          <th>
+            Picture
+          </th>
+          <th>
+            Firstname
+            <input [(ngModel)]="searchText.firstname" 
+                   (ngModelChange)="applyFilters()" 
+                   placeholder="Search...">
+          </th>
+          <th>
+            Lastname
+            <input [(ngModel)]="searchText.lastname" 
+                   (ngModelChange)="applyFilters()" 
+                   placeholder="Search...">
+          </th>
+          <th>
+            Username
+            <input [(ngModel)]="searchText.username" 
+                   (ngModelChange)="applyFilters()" 
+                   placeholder="Search...">
+          </th>
+          <th>
+            Adress
+            <input [(ngModel)]="searchText.adress" 
+                   (ngModelChange)="applyFilters()" 
+                   placeholder="Search...">
+          </th>
+          <th>
+            Phone number
+            <input [(ngModel)]="searchText.phone" 
+                   (ngModelChange)="applyFilters()" 
+                   placeholder="Search...">
+          </th>
+          <th>
+            Mail adress
+            <input [(ngModel)]="searchText.mail" 
+                   (ngModelChange)="applyFilters()" 
+                   placeholder="Search...">
+          </th>
+          <th>
+            Accept/Remove
+          </th>
+        </tr>
+        <tr *ngFor="let u of shownUsers">
+            <td class="profile-picture"><img src="{{u.image}}" alt="Profile Picture"></td>
+            <td>{{u.firstname}}</td>
+            <td>{{u.lastname}}</td>
+            <td>{{u.username}}</td>
+            <td>{{u.adress}}</td>
+            <td>{{u.phone}}</td>
+            <td>{{u.mail}}</td>
+            <td><div class="update-button">
+                <button (click)="acceptPatient(u.username)">Accept</button>
+                <button (click)="removePatient(u.username,u.mail)">Remove</button>
+            </div></td>
+        </tr>
+      </table>
+      
+      
+      <div class="logout-button">
+        <button (click)="logout()">Logout</button>
+    </div>
+</body>

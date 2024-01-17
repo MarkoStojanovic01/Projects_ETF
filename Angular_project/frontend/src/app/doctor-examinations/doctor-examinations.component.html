@@ -1,0 +1,87 @@
+<body>
+  <h3>Examinations</h3>
+  <br/>
+  <h4>
+  <a routerLink="..">Profile</a> | 
+  <a routerLink=".">Examinations</a> |
+  <a routerLink="../other">Other</a>
+  </h4>
+  <hr/>
+  <router-outlet></router-outlet>
+  
+
+  <table class="all-table">
+      <tr>
+        <th>
+          Examination
+        </th>
+        <th>
+          Date
+        </th>
+        <th>
+          Duration
+        </th>
+        <th>
+          Patient
+        </th>
+        <th>
+          Remove Appointment
+        </th>
+      </tr>
+      <tr *ngFor="let a of appointments">
+          <td>{{a.examination}}</td>
+          <td>{{ a.date | date:'yyyy-MM-dd HH:mm' }}</td>
+          <td>{{a.duration}}</td>
+          <td><a [routerLink]="['../patient', a.patient]">{{a.patient}}</a></td>
+          <td class="remove-button"><button (click)="removeAppointment(a.doc_username,a.date)" *ngIf="a!=null">Yes</button></td>
+      </tr>
+    </table>
+
+
+    <br/>
+      <br/>
+
+      <form (ngSubmit)="makeReport()" class="report-form">
+        
+        <div class="input-group">
+          <label for="examination">Choose Examination:</label>
+          <select id="examination" name="examination" [(ngModel)]="appointmentDate" required>
+            <option value="" disabled>Select an examination</option>
+            <option *ngFor="let a of oldAppointments" [value]="a.date">{{ a.examination }}({{a.patient}}):{{a.date | date:'yyyy-MM-dd HH:mm'}}</option>
+          </select>
+          <div class="error" *ngIf="!isExaminationValid">Please select an examination.</div>
+        </div>
+        
+        <div class="input-group">
+          <label for="diagnosis">Diagnosis:</label>
+          <input type="text" id="diagnosis" name="diagnosis" [(ngModel)]="diagnosis" required>
+          <div class="error" *ngIf="!isDiagnosisValid">Write a diagnosis</div>
+        </div>
+        
+        <div class="input-group">
+          <label for="reason">Reason:</label>
+          <input type="text" id="reason" name="reason" [(ngModel)]="reason" required>
+          <div class="error" *ngIf="!isReasonValid">Write a reason</div>
+        </div>
+
+        <div class="input-group">
+          <label for="therapy">Therapy:</label>
+          <input type="text" id="therapy" name="therapy" [(ngModel)]="therapy" required>
+          <div class="error" *ngIf="!isTherapyValid">Write a therapy</div>
+        </div>
+
+        <div class="input-group">
+          <label for="date">New Date:</label>
+          <input type="text" id="date" name="date" [(ngModel)]="newAppointmentDate" required>
+          <div class="error" *ngIf="!isDateValid">Date must be in the format mm.dd.yyyy.</div>
+        </div>
+      
+        <button type="submit" class="submit">Make report</button>
+      </form>
+
+  <div class="logout-button">
+      <button (click)="logout()">Logout</button>
+  </div>
+
+
+</body>

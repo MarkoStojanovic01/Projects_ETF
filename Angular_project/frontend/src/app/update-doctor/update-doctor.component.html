@@ -1,0 +1,68 @@
+<body>
+    <h3 class="h3">
+        Update doctor
+    </h3>
+    <br/>
+
+    <div class="logout-button">
+        <button (click)="goBack()">Go Back</button>
+    </div>
+
+    <form (ngSubmit)="updatePatient()" class="request-form">
+        
+        <div class="input-group">
+          <label for="firstname">Firstname: {{user.firstname}}</label>
+          <input type="text" id="firstname" name="firstname" [(ngModel)]="firstname" required>
+        </div>
+        
+        <div class="input-group">
+            <label for="lastname">Lastname: {{user.lastname}}</label>
+            <input type="text" id="lastname" name="lastname" [(ngModel)]="lastname" required>
+        </div>
+
+        <div class="input-group">
+            <label for="adress">Adress: {{user.adress}}</label>
+            <input type="text" id="adress" name="adress" [(ngModel)]="adress" required>
+        </div>
+
+        <div class="input-group">
+            <label for="phone">Phone: {{user.phone}}</label>
+            <input type="text" id="phone" name="phone" [(ngModel)]="phone" required>
+        </div>
+
+        <div class="input-group">
+            <label for="specialization">Choose Specialization: {{user.specialization}}</label>
+            <select id="specialization" name="specialization" [(ngModel)]="specialization" required>
+              <option value="" disabled>Select a specialization</option>
+              <option *ngFor="let s of specializations" [value]="s.specialization">{{ s.specialization }}</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="licence">Licence number: {{user.licenceNumber}}</label>
+            <input type="number" id="licence" name="licence" [(ngModel)]="licence" required min="1" (keypress)="validateIntegerInput($event)" #licenceInput="ngModel">
+            <div class="error" *ngIf="licenceInput.invalid && (licenceInput.dirty || licenceInput.touched)">
+              Enter a valid licence number (greater than zero).
+            </div>
+          </div>
+      
+        <button type="submit" class="submit">Update profile</button>
+      </form>
+
+      <br/>
+
+      <div class="profile-image">
+      <img src="{{user.image}}" alt="Profile Picture">
+        </div>
+
+        <button (click)="removeImage()" *ngIf="user.image!='assets/unknown-person.jpg'">Remove image</button>
+
+    <br/>
+
+      <div>
+        Upload profile image:  <input type="file" id="image" name="image" (change)="onFileSelected($event)" accept=".jpg, .jpeg, .png">
+        <button (click)="addImage()">Add image</button>
+        </div>
+        <div class="error" *ngIf="wrongSize">Image doesn't have right dimensions!</div>
+
+</body>

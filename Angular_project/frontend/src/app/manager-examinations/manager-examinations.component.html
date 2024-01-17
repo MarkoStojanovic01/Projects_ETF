@@ -1,0 +1,173 @@
+<body>
+    <h3 class="h3">
+        Manager
+        <br/>
+        <br/>
+        <h4 class="h4">Examinations</h4>
+    </h3>
+    <br/>
+    <h4>
+    <a routerLink="..">Users</a> | 
+    <a routerLink="../doctor">Add doctor</a> |
+    <a routerLink="../registrations">Registrations</a> |
+    <a routerLink=".">Examinations</a>
+    </h4>
+    <hr/>
+    <router-outlet></router-outlet>
+
+    <div class="logout-button">
+        <button (click)="logout()">Logout</button>
+    </div>
+
+    <table class="examinations-table">
+        <tr>
+          <th>
+            Requested examinations
+          </th>
+          <th>
+            Specialization
+          </th>
+          <th>
+            Duration
+          </th>
+          <th>
+            Price
+          </th>
+          <th>
+            Accept/Remove
+          </th>
+        </tr>
+        <tr *ngFor="let e of newExaminations">
+            <td>{{e.examination}}</td>
+            <td>{{e.specialization}}</td>
+            <td>{{e.duration}} min</td>
+            <td>{{e.price}}</td>
+            <td class="add-button">
+                <button (click)="addExamination(e.examination,e.specialization)" >Accept</button>
+                <button (click)="removeExamination(e.examination,e.specialization)" >Remove</button>
+            </td>
+        </tr>
+      </table>
+
+      <br/>
+      <br/>
+
+      <form (ngSubmit)="addSpecialization()" class="request-form">
+        
+        <div class="input-group">
+          <label for="newSpecialization">Enter specialization:</label>
+          <input type="text" id="newSpecialization" name="newSpecialization" [(ngModel)]="newSpecialization" required>
+          <div class="error" *ngIf="!isSpecializationValid">Empty</div>
+          <div class="error" *ngIf="oldSpecialization">Specialization already exists</div>
+        </div>
+      
+        <button type="submit" class="submit">Add specialization</button>
+      </form>
+
+      <br/>
+      <br/>
+      <br/>
+
+      <h3>
+
+      <form>
+
+      <div class="input-group">
+        <label for="specialization">Choose Specialization:</label>
+        <select id="specialization" name="specialization" [(ngModel)]="specialization" required (ngModelChange)="getExaminations()">
+          <option value="" disabled>Select a specialization</option>
+          <option *ngFor="let s of specializations" [value]="s.specialization">{{ s.specialization }}</option>
+        </select>
+      </div>
+    </form>
+
+  </h3>
+
+  <table class="examinations-table" *ngIf="specialization!=''">
+    <tr>
+      <th>
+        Examinations
+      </th>
+      <th>
+        Duration
+      </th>
+      <th>
+        Price
+      </th>
+      <th>
+        Update
+      </th>
+      <th>
+        Delete
+      </th>
+    </tr>
+    <tr *ngFor="let e of examinations">
+        <td>
+          {{e.examination}}
+        </td>
+        <td>
+          {{e.duration}}
+          </td>
+        <td>
+          {{e.price}}
+        </td>
+        <td class="add-button">
+          <button (click)="updateExamination(e.examination,e.duration, e.price)" >Yes</button>
+        </td>
+        <td class="add-button">
+            <button (click)="deleteExamination(e.examination,e.specialization)" >Yes</button>
+        </td>
+    </tr>
+    <td>
+      <div class="input-group">
+      <input type="text" id="examination" name="examination" [(ngModel)]="examination" required>
+      </div>
+    </td>
+    <td>
+      <div class="input-group">
+        <input type="number" id="duration" name="duration" [(ngModel)]="duration" 
+        required min="1" (keypress)="validateIntegerInput($event)" #durationInput="ngModel">
+        <div class="error" *ngIf="durationInput.invalid && (durationInput.dirty || durationInput.touched)">
+          Enter a valid duration (greater than zero).
+        </div>
+      </div>
+      </td>
+    <td>
+      <div class="input-group">
+        <input type="text" id="price" name="price" [(ngModel)]="price" required>
+        </div>
+    </td>
+    <td><div>Enter here changes if you want</div> 
+      <div>to update examination</div></td>
+    <td></td>
+  </table>
+
+
+
+  <form (ngSubmit)="addNewExamination()" class="request-form" *ngIf="specialization!=''">
+        
+    <div class="input-group">
+      <label for="newExamination">Examination:</label>
+      <input type="text" id="newExamination" name="newExamination" [(ngModel)]="newExamination" required>
+      <div class="error" *ngIf="!isExaminationValid">Enter an examination</div>
+    </div>
+    
+    <div class="input-group">
+        <label for="addDuration">Duration:</label>
+        <input type="number" id="addDuration" name="addDuration" [(ngModel)]="addDuration" 
+        required min="1" (keypress)="validateIntegerInput($event)" #durationInput="ngModel">
+        <div class="error" *ngIf="durationInput.invalid && (durationInput.dirty || durationInput.touched)">
+          Enter a valid duration (greater than zero).
+        </div>
+      </div>
+
+    <div class="input-group">
+      <label for="addPrice">Price:</label>
+      <input type="text" id="addPrice" name="addPrice" [(ngModel)]="addPrice" required>
+      <div class="error" *ngIf="!isPriceValid">Enter a price</div>
+    </div>
+  
+    <button type="submit" class="submit">Add an examination</button>
+  </form>
+
+</body>

@@ -1,0 +1,88 @@
+body {
+    background-color: rgb(224, 235, 239);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    /* justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    min-height: 100vh; /* Ensure content takes at least the full viewport height */
+  }
+
+  .h3{
+    color: darkblue;
+  }
+
+  .h4{
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    /* justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+  }
+
+
+  .logout-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0px;
+  }
+  
+  .logout-button button {
+    font-size: 25px;
+    padding: 8px 15px;
+    background-color: lightcyan;
+    color: darkblue;
+    border: 2px solid darkblue; /* Add a 2px solid dark blue border */
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .addDoc-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: darkblue;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 10px;
+    color: darkblue;
+  }
+  
+  .label {
+    color: darkblue;
+    margin-bottom: 5px;
+  }
+  
+  .input-group input, .input-group select {
+    background-color: rgb(224, 235, 239);
+    color: darkblue;
+    border: 1px solid darkblue;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  .submit {
+    font-size: 25px;
+    padding: 8px 15px;
+    background-color: lightcyan;
+    color: darkblue;
+    border: 2px solid darkblue; /* Add a 2px solid dark blue border */
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  table {
+    border-collapse: separate; /* Ensure separate borders between cells */
+  border-spacing: 20px; /* Adjust the spacing as needed */
+  }

@@ -1,0 +1,86 @@
+<body>
+    <h3>Patient</h3>
+    <br/>
+    <h4>
+    <a routerLink="../..">Profile</a> | 
+    <a routerLink="../../examinations">Examinations</a> |
+    <a routerLink="../../other">Other</a>
+    </h4>
+    <hr/>
+    <router-outlet></router-outlet>
+
+    <table class="profile">
+        <tr>
+            <td>Firstname:</td>
+            <td>
+                {{patient.firstname}}
+            </td>
+            <td rowspan="5" class="profile-picture">
+                <img src="{{patient.image}}" alt="Profile Picture">
+              </td>
+        </tr>
+        <tr>
+            <td>Lastname:</td>
+            <td>
+                {{patient.lastname}} 
+            </td>
+        </tr>
+        <tr>
+            <td>Adress:</td>
+            <td>
+                {{patient.adress}} 
+            </td>
+        </tr>
+        <tr>
+            <td>Mail adress:</td>
+            <td>
+                {{patient.mail}} 
+            </td>
+        </tr>
+        <tr>
+            <td>Phone number:</td>
+            <td>
+                {{patient.phone}} 
+            </td>
+        </tr>
+    </table>
+
+    <div class="logout-button">
+        <button (click)="logout()">Logout</button>
+    </div>
+
+    <br/>
+    <br/>
+
+    <h3>Reports</h3>
+
+      <table class="all-table">
+        <tr>
+          <th>
+            Date
+          </th>
+          <th>
+            Appointment reason
+          </th>
+          <th>
+            Diagnosis
+          </th>
+          <th>
+            Therapy
+          </th>
+          <th>
+            Next appointment
+          </th>
+        </tr>
+        <tr *ngFor="let r of reports">
+            <td>{{ r.date | date:'yyyy-MM-dd HH:mm' }}</td>
+            <td>{{r.reason}}</td>
+            <td>{{r.diagnosis}}</td>
+            <td>{{r.therapy}}</td>
+            <td>{{r.nextDate | date:'yyyy-MM-dd'}}</td>
+        </tr>
+      </table>
+
+      
+
+</body>
