@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "64e88a84008bf72fd6da3ea0"
+  },
+  "specialization": "Ocni"
+},
+{
+  "_id": {
+    "$oid": "64e88ac8008bf72fd6da3ea5"
+  },
+  "specialization": "Hirurg"
+},
+{
+  "_id": {
+    "$oid": "64e88ad4008bf72fd6da3ea6"
+  },
+  "specialization": "Stomatolog"
+},
+{
+  "_id": {
+    "$oid": "64e88ae2008bf72fd6da3ea7"
+  },
+  "specialization": "Usni"
+},
+{
+  "_id": {
+    "$oid": "6506e4059ab9a7950664bc6e"
+  },
+  "specialization": "Ginekolog",
+  "__v": 0
+}]

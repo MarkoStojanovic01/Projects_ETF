@@ -1,0 +1,162 @@
+[{
+  "_id": {
+    "$oid": "64eb1105c51ae6cc7cff0358"
+  },
+  "doc_firstname": "Aleksa",
+  "doc_lastname": "Zivanovic",
+  "doc_username": "aki",
+  "patient": "pera",
+  "examination": "Kratak pregled",
+  "price": "1000 dinara",
+  "duration": 15,
+  "specialization": "Ocni",
+  "date": {
+    "$date": "2023-07-27T11:00:00.000Z"
+  },
+  "branch": "Srednji Odsek",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ec9b3346f1f3ad20bb7295"
+  },
+  "doc_firstname": "Predrag",
+  "doc_lastname": "Svabic",
+  "doc_username": "pedja",
+  "patient": "pera",
+  "examination": "Ultrazvuk",
+  "price": "50 evra",
+  "duration": 60,
+  "specialization": "Hirurg",
+  "date": {
+    "$date": "2023-09-20T11:00:00.000Z"
+  },
+  "branch": "Veliki Odsek",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ef027c82ed25b5e9b68164"
+  },
+  "doc_firstname": "Aleksa",
+  "doc_lastname": "Zivanovic",
+  "doc_username": "aki",
+  "patient": "pera",
+  "examination": "Kratak pregled",
+  "price": "1000 dinara",
+  "duration": 15,
+  "specialization": "Ocni",
+  "date": {
+    "$date": "2023-11-20T11:00:00.000Z"
+  },
+  "branch": "Srednji Odsek",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "64ef10d093e7b59402e1305a"
+  },
+  "doc_firstname": "Zika",
+  "doc_lastname": "Zikic",
+  "doc_username": "zika",
+  "patient": "pera",
+  "examination": "Stavljanje plombe",
+  "price": "3500 dinara",
+  "duration": 40,
+  "specialization": "Stomatolog",
+  "date": {
+    "$date": "2022-05-05T15:00:00.000Z"
+  },
+  "branch": "Veliki Odsek",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6506e4ff9ab9a7950664bc89"
+  },
+  "doc_firstname": "Milica",
+  "doc_lastname": "Micic",
+  "doc_username": "mica",
+  "patient": "Mika",
+  "examination": "Kratak pregled",
+  "price": "1000 dinara",
+  "duration": 20,
+  "specialization": "Usni",
+  "date": {
+    "$date": "2023-08-27T08:00:00.000Z"
+  },
+  "branch": "Dorcol",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65071101f5a71144e8cd65b0"
+  },
+  "doc_firstname": "Zika",
+  "doc_lastname": "Zikic",
+  "doc_username": "zika",
+  "patient": "pera",
+  "examination": "Pregled i kamenac",
+  "price": "3000 dinara",
+  "duration": 30,
+  "specialization": "Stomatolog",
+  "date": {
+    "$date": "2023-05-05T15:35:00.000Z"
+  },
+  "branch": "Veliki Odsek",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "650737a37ae82e2487007c9f"
+  },
+  "doc_firstname": "Zika",
+  "doc_lastname": "Zikic",
+  "doc_username": "zika",
+  "patient": "pera",
+  "examination": "Stavljanje plombe",
+  "price": "3500 dinara",
+  "duration": 40,
+  "specialization": "Stomatolog",
+  "date": {
+    "$date": "2024-02-10T13:30:00.000Z"
+  },
+  "branch": "Veliki Odsek",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6507383ef5a71144e8cd65bc"
+  },
+  "doc_firstname": "Zika",
+  "doc_lastname": "Zikic",
+  "doc_username": "zika",
+  "patient": "pera",
+  "examination": "Stavljanje plombe",
+  "price": "3500 dinara",
+  "duration": 40,
+  "specialization": "Stomatolog",
+  "date": {
+    "$date": "2023-02-10T13:30:00.000Z"
+  },
+  "branch": "Veliki Odsek",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65074902f5a71144e8cd65cf"
+  },
+  "doc_firstname": "Zika",
+  "doc_lastname": "Zikic",
+  "doc_username": "zika",
+  "patient": "Mika",
+  "examination": "Stavljanje plombe",
+  "price": "3500 dinara",
+  "duration": 40,
+  "specialization": "Stomatolog",
+  "date": {
+    "$date": "2023-04-11T13:30:00.000Z"
+  },
+  "branch": "Veliki Odsek",
+  "__v": 0
+}]

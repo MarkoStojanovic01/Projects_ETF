@@ -1,0 +1,74 @@
+[{
+  "_id": {
+    "$oid": "64e89cf1008bf72fd6da3eaf"
+  },
+  "examination": "Kratak pregled",
+  "specialization": "Ocni",
+  "duration": 15,
+  "doctor": "aki",
+  "price": "1000 dinara"
+},
+{
+  "_id": {
+    "$oid": "64e89df0008bf72fd6da3eb6"
+  },
+  "examination": "Ultrazvuk",
+  "specialization": "Hirurg",
+  "duration": 60,
+  "doctor": "pedja",
+  "price": "50 evra"
+},
+{
+  "_id": {
+    "$oid": "64e89e63008bf72fd6da3eb8"
+  },
+  "examination": "Pregled i kamenac",
+  "specialization": "Stomatolog",
+  "duration": 30,
+  "doctor": "zika",
+  "price": "3000 dinara"
+},
+{
+  "_id": {
+    "$oid": "64ecabe37f991443bdc089a6"
+  },
+  "doctor": "zika",
+  "examination": "Stavljanje plombe",
+  "price": "3500 dinara",
+  "duration": 40,
+  "specialization": "Stomatolog",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6506e2f69ab9a7950664bc47"
+  },
+  "doctor": "mica",
+  "examination": "Kratak pregled",
+  "price": "1000 dinara",
+  "duration": 20,
+  "specialization": "Usni",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65074ba9a890a9f03a31ccdf"
+  },
+  "doctor": "pedja",
+  "examination": "Pregled",
+  "price": "3000 dinara",
+  "duration": 40,
+  "specialization": "Hirurg",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65074bdba890a9f03a31cce8"
+  },
+  "doctor": "aki",
+  "examination": "Pregled dioptrije",
+  "price": "1000 dinara",
+  "duration": 40,
+  "specialization": "Ocni",
+  "__v": 0
+}]

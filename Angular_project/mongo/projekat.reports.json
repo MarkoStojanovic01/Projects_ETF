@@ -1,0 +1,59 @@
+[{
+  "_id": {
+    "$oid": "64ef01a793e7b59402e13054"
+  },
+  "doc_firstname": "Aleksa",
+  "doc_username": "aki",
+  "patient": "pera",
+  "specialization": "Ocni",
+  "date": {
+    "$date": "2023-07-27T06:10:00.000Z"
+  },
+  "diagnosis": "Levo oko dioptrija -1",
+  "reason": "Poteskoce sa vidom na daljinu",
+  "therapy": "Naocare",
+  "nextDate": {
+    "$date": "2024-04-20T00:00:00.000Z"
+  },
+  "doc_lastname": "Zivanovic"
+},
+{
+  "_id": {
+    "$oid": "64ef142b82ed25b5e9b681ba"
+  },
+  "doc_firstname": "Zika",
+  "doc_lastname": "Zikic",
+  "doc_username": "zika",
+  "patient": "pera",
+  "diagnosis": "Sve je proslo dobro",
+  "reason": "Potrebna plomba",
+  "specialization": "Stomatolog",
+  "date": {
+    "$date": "2022-05-05T15:00:00.000Z"
+  },
+  "therapy": "Redovno pranje zuba",
+  "nextDate": {
+    "$date": "2024-02-04T23:00:00.000Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65074955a890a9f03a31ccb3"
+  },
+  "doc_firstname": "Zika",
+  "doc_lastname": "Zikic",
+  "doc_username": "zika",
+  "patient": "pera",
+  "diagnosis": "Mora ponovo",
+  "reason": "Mnogo kamenca",
+  "specialization": "Stomatolog",
+  "date": {
+    "$date": "2023-05-05T15:35:00.000Z"
+  },
+  "therapy": "Sredstvo za ispiranje",
+  "nextDate": {
+    "$date": "2023-05-14T22:00:00.000Z"
+  },
+  "__v": 0
+}]

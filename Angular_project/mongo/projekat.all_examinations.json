@@ -1,0 +1,123 @@
+[{
+  "_id": {
+    "$oid": "64e89cf1008bf72fd6da3eaf"
+  },
+  "examination": "Pregled dioptrije",
+  "specialization": "Ocni",
+  "duration": 40,
+  "price": "1000 dinara",
+  "added": "true"
+},
+{
+  "_id": {
+    "$oid": "64e89da1008bf72fd6da3eb3"
+  },
+  "examination": "Snimanje",
+  "specialization": "Usni",
+  "duration": 30,
+  "price": "3000 dinara",
+  "added": "true"
+},
+{
+  "_id": {
+    "$oid": "64e89df0008bf72fd6da3eb6"
+  },
+  "examination": "Ultrazvuk",
+  "specialization": "Hirurg",
+  "duration": 60,
+  "price": "50 evra",
+  "added": "true"
+},
+{
+  "_id": {
+    "$oid": "64e89e2f008bf72fd6da3eb7"
+  },
+  "examination": "Operacija",
+  "specialization": "Hirurg",
+  "duration": 150,
+  "price": "500 evra",
+  "added": "true"
+},
+{
+  "_id": {
+    "$oid": "64e89e63008bf72fd6da3eb8"
+  },
+  "examination": "Pregled i kamenac",
+  "specialization": "Stomatolog",
+  "duration": 30,
+  "price": "3000 dinara",
+  "added": "true"
+},
+{
+  "_id": {
+    "$oid": "64e89f26008bf72fd6da3ebe"
+  },
+  "examination": "Kratak pregled",
+  "specialization": "Stomatolog",
+  "duration": 20,
+  "price": "1500 dinara",
+  "added": "true"
+},
+{
+  "_id": {
+    "$oid": "64ecab94d2897bf8b07db692"
+  },
+  "examination": "Stavljanje plombe",
+  "specialization": "Stomatolog",
+  "duration": 40,
+  "price": "3500 dinara",
+  "added": "true"
+},
+{
+  "_id": {
+    "$oid": "64ef5fae93e7b59402e13066"
+  },
+  "examination": "Laserska operacija",
+  "specialization": "Ocni",
+  "duration": 90,
+  "price": "700 evra",
+  "added": "true"
+},
+{
+  "_id": {
+    "$oid": "65035d9f22d19e7847183159"
+  },
+  "examination": "Proteza",
+  "specialization": "Stomatolog",
+  "duration": 40,
+  "price": "6000 dinara",
+  "added": "false"
+},
+{
+  "_id": {
+    "$oid": "65036aba3ad307501d000f23"
+  },
+  "examination": "Kratak pregled",
+  "price": "1000 dinara",
+  "duration": 20,
+  "specialization": "Usni",
+  "added": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6506e4289ab9a7950664bc72"
+  },
+  "examination": "Pregled",
+  "price": "5000 dinara",
+  "duration": 60,
+  "specialization": "Ginekolog",
+  "added": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65074b6ca890a9f03a31ccd0"
+  },
+  "examination": "Pregled",
+  "price": "3000 dinara",
+  "duration": 40,
+  "specialization": "Hirurg",
+  "added": "true",
+  "__v": 0
+}]
